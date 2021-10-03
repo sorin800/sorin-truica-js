@@ -13,15 +13,18 @@
     rel="stylesheet"
     href="https://pixellab.ro/js/pixeltab/static/js/pixeltab.css"
   >
-
   <script src="https://pixellab.ro/js/pixeltab/static/js/pixeltab-top.js"></script>
 </head>
 
-<body>
+<body onload="alert('Bine ai venit.')">
 
+  <h1>Hello</h1>
+  <button onclick="console.log('Am fost apasat')">Click1</button>
+  <button onclick="alert('Butonul a fost apasat')">Click2</button>
+  <button onmouseover="alert('Ai vrea sa apesi acest buton?');
+  console.log(prompt('Te rog sa-ti introduci numele!'))">Click3</button>
 
-
-
+  <script src="app.js"></script>
   <div
     class="pixeltab-host"
     id="js01-02-05"
