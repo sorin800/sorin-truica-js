@@ -6,6 +6,7 @@ var person = {
   skills: {
     html: true,
     javaScript: true,
+    css: true,
   },
   friends: {
     larry: {
@@ -32,7 +33,7 @@ console.warn(
   `,
 );
 
-console.log(person.friends.carol.age + '');
+console.log(person.friends.carol.age.toString());
 
 console.warn(
   `
