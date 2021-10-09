@@ -1,13 +1,13 @@
 var form = document.querySelector('form');
+var length = document.getElementById('length');
+var width = document.getElementById('width');
+var height = document.getElementById('height');
+var result = document.getElementById('result');
 
 form.addEventListener('submit', function (e) {
-  var length = document.getElementById('length').value;
-  var width = document.getElementById('width').value;
-  var height = document.getElementById('height').value;
-  var result = document.getElementById('result');
-
-  var volume = length * width * height;
-  result.value = volume;
+  var volume = length.value * width.value * height.value;
+  // result.value = volume;
+  result.innerText = volume;
 
   e.preventDefault();
 });
