@@ -2,7 +2,7 @@
   "editor.renderWhitespace": "all",
   "files.trimTrailingWhitespace": true,
   "editor.tabSize": 2,
-  "editor.fontSize": 24,
+  "editor.fontSize": 18,
   "liveServer.settings.donotShowInfoMsg": true,
   "files.insertFinalNewline": true,
   "editor.formatOnSave": true,
@@ -10,7 +10,9 @@
   "prettier.singleQuote": true,
   "javascript.format.semicolons": "insert",
   "prettier.trailingComma": "all",
-  "prettier.disableLanguages": ["html"],
+  "prettier.disableLanguages": [
+    "html"
+  ],
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
   },
@@ -33,6 +35,8 @@
     "compounds": []
   },
   "editor.detectIndentation": false,
-  "liveServer.settings.ignoreFiles": ["server/api/persons/models/*.data"],
+  "liveServer.settings.ignoreFiles": [
+    "server/api/persons/models/*.data"
+  ],
   "javascript.updateImportsOnFileMove.enabled": "always"
 }
