@@ -87,3 +87,12 @@ let superiorLimit = prompt('Introdu limita superioara');
 for (let i = 5; i <= superiorLimit; i++) {
   console.log(number * i);
 }
+var i = 1;
+
+while (i <= 100) {
+  console.log(i);
+  i++;
+  if (i > 50) {
+    break;
+  }
+}
