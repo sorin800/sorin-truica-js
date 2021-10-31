@@ -6,6 +6,8 @@ class Car {
     speed,
     topSpeed = 160,
     topReverseSpeed = -50,
+    isTrunkOpen = false,
+    areLightsOn = false,
   ) {
     this.make = make;
     this.color = color;
@@ -13,6 +15,31 @@ class Car {
     this.speed = speed;
     this.topSpeed = topSpeed;
     this.topReverseSpeed = topReverseSpeed;
+    this.isTrunkOpen = isTrunkOpen;
+    this.areLightsOn = areLightsOn;
+  }
+
+  flashLights() {
+    this.areLightsOn = true;
+    window.setTimeout(() => {
+      this.areLightsOn = false;
+    }, 3000);
+  }
+
+  turnLightsOn() {
+    this.areLightsOn = true;
+  }
+
+  turnLightsOff() {
+    this.areLightsOn = false;
+  }
+
+  openTrunk() {
+    this.isTrunkOpen = true;
+  }
+
+  closeTrunk() {
+    this.isTrunkOpen = false;
   }
 
   accelerate() {

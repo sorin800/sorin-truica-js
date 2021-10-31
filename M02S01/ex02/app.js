@@ -11,24 +11,24 @@ class Vehicle {
   displaySpeed() {
     console.log(`Viteza curenta este: ${this.speed}.`);
   }
+
   accelerate() {
-    this.speed++;
-    this.displaySpeed();
+    this.setSpeed(this.speed + 1);
   }
+
   decelerate() {
-    this.speed--;
-    this.displaySpeed();
+    this.setSpeed(this.speed - 1);
   }
+
   setSpeed(speed) {
     if (speed > this.topSpeed) {
-      this.speed = this.topSpeed;
-      return;
+      speed = this.topSpeed;
     }
 
     if (speed < this.topReverseSpeed) {
-      this.speed = this.topReverseSpeed;
-      return;
+      speed = this.topReverseSpeed;
     }
+
     this.speed = speed;
     this.displaySpeed();
   }
@@ -44,7 +44,24 @@ class Bicycle extends Vehicle {
   constructor(make, color, speed, topSpeed) {
     super(make, color, 2, speed, topSpeed, 0);
   }
+
+  decelerate() {
+    if (this.speed - 1 < this.topReverseSpeed) {
+      this.speed = this.topReverseSpeed;
+    }
+
+    this.displaySpeed();
+  }
 }
 
-// organism -> mammal -> primates -> human, canines, felines
-// -> fish
+const bike = new Bicycle('Pegas', 'red', 8, 20);
+bike.setSpeed(2);
+bike.decelerate();
+bike.decelerate();
+bike.decelerate();
+
+class Tricycle extends Vehicle {
+  constructor(make, color, speed, topSpeed, topReverseSpeed) {
+    super(make, color, 3, speed, topSpeed, 0);
+  }
+}

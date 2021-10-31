@@ -1,12 +1,26 @@
 const paragraphElement = document.createElement('p');
 const headingElement = document.createElement('h1');
 const userAgentString = navigator.userAgent.toLowerCase();
-let message = 'Nu stim ce browser folosesti';
-let browserName = 'N/A';
+let message = '';
+let browserName = '';
 
-if (userAgentString.includes('chrome')) {
-  message = 'Navighezi folosind Chrome';
-  browserName = 'Chrome';
+switch (true) {
+  case userAgentString.includes('chrome'):
+    message = 'Navighezi folosind Chrome';
+    browserName = 'Chrome';
+    break;
+  case userAgentString.includes('msie'):
+    message = 'Navighezi folosind Internet Explore';
+    browserName = 'Internet Explore';
+    break;
+  case userAgentString.includes('Mozilla'):
+    message = 'Navighezi folosind Mozilla Firefox';
+    browserName = 'Mozilla Firefox';
+    break;
+  default:
+    message = 'Nu stim ce browser folosesti';
+    browserName = 'N/A';
+    break;
 }
 
 paragraphElement.innerText = message;

@@ -52,8 +52,6 @@ while (b < 67) {
   console.log(b);
   b++;
 }
-<<<<<<< HEAD
-=======
 
 console.warn(`
 Folosind keywordul break opreste bucla atunci cand numarul este egal cu 12 (dar afiseaza-l).
@@ -90,7 +88,6 @@ for (let i = 5; i <= superiorLimit; i++) {
   console.log(number * i);
 }
 var i = 1;
->>>>>>> f0040a5eccca17d906972e116fd1ff4d30f491c3
 
 console.warn(`
 Folosind keywordul break opreste bucla atunci cand numarul este egal cu 12 (dar afiseaza-l).
