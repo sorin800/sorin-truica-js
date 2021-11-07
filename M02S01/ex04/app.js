@@ -13,11 +13,29 @@ class Car {
     this.frame.style.top = `${y}px`;
   }
 
+  changeWheelsColor(color) {
+    this.wheelFront.style.backgroundColor = color;
+    this.wheelBack.style.backgroundColor = color;
+  }
+
+  changeWheelsCapColor(color) {
+    this.wheelCapBack.style.background = color;
+    this.wheelCapFront.style.background = color;
+  }
+
   changeColor(color = 'red') {
     this.carBody.style.backgroundColor = color;
     this.carTop.style.backgroundColor = color;
     this.wheelFront.style.backgroundColor = color;
     this.wheelBack.style.backgroundColor = color;
+  }
+
+  engageBreak() {
+    this.lightBack.classList.add('light--on');
+  }
+
+  disenagageBreak() {
+    this.lightBack.classList.remove('light--on');
   }
 
   turnLightsOn() {
@@ -28,6 +46,13 @@ class Car {
   turnLightsOff() {
     this.areLightsOn = false;
     this.lightFront.classList.remove('light--on');
+  }
+
+  flashLights() {
+    this.turnLightsOn();
+    window.setTimeout(() => {
+      this.turnLightsOff();
+    }, 2000);
   }
 
   toggleHazards() {
@@ -115,5 +140,9 @@ class Car {
 
 const audi = new Car(250, 400, 'black');
 audi.render();
-
+audi.changeWheelsColor('red');
+audi.changeWheelsCapColor('blue');
+audi.engageBreak();
+audi.disenagageBreak();
+audi.toggleHazards();
 // no-op

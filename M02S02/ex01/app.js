@@ -39,5 +39,34 @@ const $navigation = $('<div>', {
   class: 'navigation',
   text: 'Nav goes here',
 });
+
 const $container = $('.container');
 $container.after($navigation);
+$('<a>', {
+  class: 'nav-link',
+  text: 'Primul Link',
+  href: 'http://www.google.com',
+}).appendTo($navigation);
+
+$('<h2>', {
+  text: 'Navigatie',
+}).before('<a class="nav-link" href="http://www.google.com">Primul Link</a>');
+
+// $('<sup>', {
+//   text: '1',
+// }).prepend('<a class="nav-link" href="http://www.google.com">Primul Link</a>');
+
+$('<sup>', {
+  text: '1',
+}).prependTo('.nav-link');
+
+$('<h1>', {
+  text: 'Invat jQuery',
+}).before('<div class="container"></div>');
+
+$('<p>', {
+  class: 'documentation',
+  text: 'Documentatia jQuery poate fi gasita ',
+}).appendTo($body);
+
+$('.documentation').append('<a href="https://api.jquery.com/">aici</a>.');

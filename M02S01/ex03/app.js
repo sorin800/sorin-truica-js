@@ -5,6 +5,19 @@ const Car = {
   speed: 0,
   topSpeed: 10,
   topReverseSpeed: -10,
+  areLightsOn: false,
+  turnLightsOn: function () {
+    this.areLightsOn = true;
+  },
+  turnLightsOff: function () {
+    this.areLightsOn = false;
+  },
+  flashLights: function () {
+    this.turnLightsOn();
+    window.setTimeout(() => {
+      this.turnLightsOff();
+    }, 2000);
+  },
   displaySpeed: function () {
     console.log(`Viteza curenta este ${this.speed}.`);
   },
@@ -29,10 +42,12 @@ const Car = {
 
 const audi = Object.create(Car);
 audi.make = 'Audi';
-audi.color = 'bkac';
+audi.color = 'black';
 audi.wheels = 4;
 audi.speed = 0;
-audi.topSpeed = 260;
+audi.topSpeed = 140;
 audi.topReverseSpeed = 100;
-
+audi.setSpeed(140);
+audi.accelerate();
 console.log(audi);
+audi.flashLights();
