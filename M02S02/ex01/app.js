@@ -50,7 +50,7 @@ $('<a>', {
 
 $('<h2>', {
   text: 'Navigatie',
-}).before('<a class="nav-link" href="http://www.google.com">Primul Link</a>');
+}).before('.nav-link');
 
 // $('<sup>', {
 //   text: '1',
@@ -62,7 +62,7 @@ $('<sup>', {
 
 $('<h1>', {
   text: 'Invat jQuery',
-}).before('<div class="container"></div>');
+}).before($container);
 
 $('<p>', {
   class: 'documentation',
