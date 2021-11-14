@@ -16,11 +16,6 @@
         name="name"
       >
 
-      <input
-        type="text"
-        name="name"
-      >
-
       <br><br>
 
       <label for="surname">Prenume:</label>
@@ -41,7 +36,98 @@
 
       <button type="submit">Adauga</button>
     </fieldset>
+
+    <fieldset>
+      <legend>Detalii</legend>
+      <input
+        type="text"
+        id="skillInput"
+        placeholder="Add skill"
+      >
+      <button
+        type="button"
+        title="Add skill"
+      >+</button>
+    </fieldset>
+
+    <label for="hasPets">
+      <input
+        type="checkbox"
+        name="hasPets"
+        id="hasPets"
+      >
+      Has pets?
+    </label>
+
+    <fieldset style="display: none;">
+      <legend>Pet details</legend>
+
+      <label for="petName">Pet name</label>
+      <input
+        type="text"
+        name="petName"
+        id="petName"
+        placeholder="Pet name"
+      > <br>
+
+      <label for="petSpecies">Pet species</label>
+      <input
+        type="text"
+        name="petSpecies"
+        id="petSpecies"
+        placeholder="Pet species"
+      > <br>
+
+      <label for="petAge">Pet age</label>
+      <input
+        type="number"
+        name="petAge"
+        id="petAge"
+        placeholder="Pet age"
+      > <br> <br>
+
+      <button
+        type="button"
+        title="Add pet"
+      >Add pet</button>
+      <!-- <ul></ul> -->
+    </fieldset>
+
+    <fieldset>
+      <legend>Add Friend</legend>
+
+      <label for="friendName">Name</label>
+      <input
+        type="text"
+        id="friendName"
+        name="friendName"
+        placeholder="Friend name"
+      > <br>
+
+      <label for="friendSurname">Surname</label>
+      <input
+        type="text"
+        id="friendSurname"
+        name="friendSurname"
+        placeholder="Friend surname"
+      > <br>
+
+      <label for="friendAge">Friend Age</label>
+      <input
+        type="number"
+        id="friendAge"
+        name="friendAge"
+        placeholder="Friend age"
+      >
+      <button
+        type="button"
+        title="Add friend"
+      >Add friend</button>
+      <!-- <ul></ul> -->
+    </fieldset>
+
   </form>
+
 
 
   <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
