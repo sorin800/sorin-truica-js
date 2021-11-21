@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const mediaQueryList = matchMedia('(min-width: 650px)');
   const button = document.querySelector('.btn');
   let eventListenerAdded = false;
 
@@ -7,19 +8,22 @@ document.addEventListener('DOMContentLoaded', () => {
     eventListenerAdded = true;
   });
 
-  window.addEventListener('resize', () => {
+  mediaQueryList.addEventListener('change', () => {
     console.log(window.innerWidth);
-    if (window.innerWidth < 650) {
-      button.removeEventListener('click', () => {
-        eventListenerAdded = false;
-      });
-    } else {
+
+    if (mediaQueryList.matches) {
+      console.log('Media query > 650px');
       if (!eventListenerAdded) {
         eventListenerAdded = true;
         button.addEventListener('click', () => {
           alert('Butonul a fost apasat!');
         });
       }
+    } else {
+      console.log('Media query < 650px');
+      button.removeEventListener('click', () => {
+        eventListenerAdded = false;
+      });
     }
   });
 });

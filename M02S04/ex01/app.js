@@ -1,6 +1,7 @@
 const box = document.querySelector('.box');
 // bad selector;
 const applyButton = document.querySelector('button[title="Aplica"]');
+const darkenButton = document.querySelector('button[title="Intuneca"]');
 const animateClass = 'animate-class';
 
 setTimeout(() => {
@@ -24,9 +25,16 @@ applyButton.addEventListener('click', (event) => {
   // }
 
   let buttonText = 'Aplica';
+  let buttonTitleText = 'Aplica';
   if (box.classList.contains(animateClass)) {
     buttonText = 'Elimina';
+    buttonTitleText = 'Elimina';
   }
 
   applyButton.innerText = buttonText;
+  applyButton.title = buttonTitleText;
+});
+
+darkenButton.addEventListener('click', (event) => {
+  box.setAttribute('style', 'background-color: #000;');
 });

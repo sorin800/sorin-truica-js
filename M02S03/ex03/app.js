@@ -1,13 +1,14 @@
 //extract div.stage from DOM
 const stageElement = document.querySelector('.stage');
 let stageAppearances = 0;
+let mouseOverSquareSides = 0;
 
 // bind event for mouseover
 stageElement.addEventListener('mouseover', () => {
   const message = 'Mouseul este pe scena.';
 
   displayMessage(message);
-  displayCount(`Mouseul a fost pe scena de ${++stageAppearances}`);
+  displayCount(`Mouseul a fost pe scena de ${++stageAppearances}.`);
 });
 
 // bind event for moseout
@@ -16,6 +17,13 @@ stageElement.addEventListener('mouseout', () => {
 
   displayMessage(message);
 });
+
+stageElement.addEventListener('mouseenter', () => {
+  displayMessageSqureSides(
+    `Mouseul a trecut de latura patratului de ${++mouseOverSquareSides}.`,
+  );
+});
+
 // extract paragraph from DOM
 let messageElement = document.querySelector('.message');
 
@@ -47,4 +55,22 @@ function displayCount(message = '') {
   }
 
   counterElement.innerText = message;
+}
+
+// extract paragraph from DOM
+let squareSidesMessage = document.querySelector('.squareSidesMessage');
+
+// hoisting: function to display message
+function displayMessageSqureSides(message = '') {
+  // check if paragraph is there
+  if (squareSidesMessage === null) {
+    squareSidesMessage = document.createElement('p');
+    squareSidesMessage.classList.add('squareSidesMessage');
+    squareSidesMessage.innerText = message;
+    document.body.append(squareSidesMessage);
+
+    return;
+  }
+  // write to paraghraph
+  squareSidesMessage.innerText = message;
 }
