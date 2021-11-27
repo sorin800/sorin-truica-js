@@ -16,30 +16,59 @@
 
 <body>
 
-  <div class="box">
-    <input
-      type="radio"
-      name="radioGroup"
-      id="box1"
+  <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+    <label
+      class="box"
+      for="box1"
     >
+      <input
+        type="radio"
+        name="radioGroup"
+        id="box1"
+        checked
+      >
+    </label>
+
+    <label
+      class="box"
+      for="box2"
+    >
+      <input
+        type="radio"
+        name="radioGroup"
+        id="box2"
+      >
+    </label>
+
+    <label
+      class="box"
+      for="box3"
+    >
+      <input
+        type="radio"
+        name="radioGroup"
+        id="box3"
+      >
+    </label>
   </div>
+
+
   <div class="box-controls">
     <button
-      title=""
       type="button"
       style="background-color: red;"
     >Set</button>
     <button
-      title=""
       type="button"
       style="background-color: green;"
     >Set</button>
     <button
-      title=""
       type="button"
       style="background-color: blue;"
     >Set</button>
+
     <br> <br>
+
     <label for="dynamicColor">Color</label>
     <input
       type="color"
@@ -50,13 +79,15 @@
       title="Dynamic"
       type="button"
     >Dynamic Color Button</button>
+
+    <div>
+      <button
+        type="button"
+        class="reset"
+      >Reset</button>
+    </div>
   </div>
-  <div>
-    <button
-      type="button"
-      class="reset"
-    >Reset</button>
-  </div>
+
   <script src="app.js"></script>
 </body>
 

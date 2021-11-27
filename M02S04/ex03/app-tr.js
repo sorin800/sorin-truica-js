@@ -74,7 +74,8 @@ function moveCharacter(axis, direction) {
 }
 
 function generateCssText(gameState) {
-  return `top: ${gameState.top}px; left: ${gameState.left}px`;
+  // return `top: ${gameState.top}px; left: ${gameState.left}px`;
+  return `transform: translateX(${gameState.left}px)`;
 }
 
 function preventOutOfBoundsBehavior(gameState) {
