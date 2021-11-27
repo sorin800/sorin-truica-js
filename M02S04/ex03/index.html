@@ -44,7 +44,7 @@
       position: absolute;
       transform: translateZ(0);
       will-change: transform;
-      transition: left .3s linear, transform .3s linear;
+      transition: all .3s linear, transform .3s linear;
     }
   </style>
 </head>
@@ -57,7 +57,10 @@
 
   <div class="controls">
     <div class="row">
-      <button>⬆️</button>
+      <button
+        data-axis="y"
+        data-direction="top"
+      >⬆️</button>
     </div>
     <div class="row">
       <button
@@ -70,7 +73,10 @@
       >➡️</button>
     </div>
     <div class="row">
-      <button>⬇️</button>
+      <button
+        data-axis="y"
+        data-direction="down"
+      >⬇️</button>
     </div>
   </div>
 

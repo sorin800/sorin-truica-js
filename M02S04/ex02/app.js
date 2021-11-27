@@ -1,9 +1,15 @@
 const boxControls = document.querySelector('.box-controls');
-const box = document.querySelector('.box');
+const boxes = document.querySelectorAll('.box');
 const colorInput = document.getElementById('dynamicColor');
 
 boxControls.addEventListener('click', (event) => {
   const targetElement = event.target;
+
+  //get the input that was checked
+  const checkedBox = document.querySelector('input[name="radioGroup"]:checked');
+
+  //get the label that needs to be colored
+  const labelToModify = document.querySelector(`label[for=${checkedBox.id}]`);
 
   if (
     targetElement.nodeName !== 'BUTTON' ||
@@ -12,11 +18,16 @@ boxControls.addEventListener('click', (event) => {
     return;
   }
 
+  // restore all boxes color
+  boxes.forEach((box) => {
+    box.style.backgroundColor = '#fff';
+  });
+
   // needless step:
   const button = targetElement;
   const color = button.style.backgroundColor;
 
-  box.style.backgroundColor = color;
+  labelToModify.style.backgroundColor = color;
 });
 
 boxControls.addEventListener('click', (event) => {
@@ -27,7 +38,9 @@ boxControls.addEventListener('click', (event) => {
   }
 
   const button = targetElement;
-  box.removeAttribute('style');
+  boxes.forEach((box) => {
+    box.removeAttribute('style');
+  });
 });
 
 // add change for text input

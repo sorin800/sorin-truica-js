@@ -24,9 +24,12 @@ const increments = 15;
 const speed = {
   forward: increments,
   back: -increments,
+  top: -increments,
+  down: increments,
 };
 const orthogonal = {
   x: 'left',
+  y: 'top',
 };
 
 character.element.style.cssText = generateCssText(gameState);
@@ -53,6 +56,8 @@ document.body.addEventListener('keydown', (event) => {
   const directionOptions = {
     ArrowRight: 'forward',
     ArrowLeft: 'back',
+    ArrowDown: 'down',
+    ArrowUp: 'top',
   };
   const direction = directionOptions[key];
 
@@ -74,14 +79,22 @@ function moveCharacter(axis, direction) {
 }
 
 function generateCssText(gameState) {
-  // return `top: ${gameState.top}px; left: ${gameState.left}px`;
-  return `transform: translateX(${gameState.left}px)`;
+  return `top: ${gameState.top}px; left: ${gameState.left}px`;
+  // return `transform: translateX(${gameState.left}px); transform: translateY(${gameState.top}px) `;
 }
 
 function preventOutOfBoundsBehavior(gameState) {
   // prevent negative x axis
   if (gameState.left <= 0) {
     gameState.left = 0;
+  }
+
+  if (gameState.top <= 0) {
+    gameState.top = 0;
+  }
+
+  if (gameState.top + character.width >= stage.height) {
+    gameState.top = stage.height - character.height;
   }
 
   // prevent positive x axis out of bounds
